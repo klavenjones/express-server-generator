@@ -6,7 +6,14 @@ const fs = require("fs");
 const { command } = require("./options/commandFlags");
 const { generateTemplate } = require("./generate/templateGeneration");
 const { showVersion, showHelpInformation } = require("./helpers");
-const { mainFlag, argument } = command.parse(process.argv);
+
+const { mainFlag, argument, commandLength, unknowns } = command.parse(
+  process.argv
+);
+
+console.log(command.parse(process.argv));
+
+
 
 let options = {
   mainFlag,
